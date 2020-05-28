@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
     b = 'ut'
     c = 'it'
     if 1 == 1
