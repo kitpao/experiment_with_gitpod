@@ -1,6 +1,14 @@
 <h1>Create an article</h1>
 
 <%= form_with model: @article do |f| %>
+  <% if @article.errors.any? %>
+    <h2>The following <%= pluralize(@article.errors.count, "error") %> prevented the article from getting created </h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
