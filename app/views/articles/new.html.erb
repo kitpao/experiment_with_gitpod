@@ -1,6 +1,6 @@
 <h1>Create an article</h1>
 
-<%= form_with model: @article do |f| %>
+<%= form_for @article do |f| %>
   <% if @article.errors.any? %>
     <h2>The following <%= pluralize(@article.errors.count, "error") %> prevented the article from getting created </h2>
     <ul>
@@ -9,6 +9,7 @@
       <% end %>
     </ul>
   <% end %>
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -18,6 +19,6 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit %>
   </p>
 <% end %>
